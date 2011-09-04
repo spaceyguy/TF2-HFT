@@ -1,0 +1,14 @@
+x = finished
+o = in progress
+- = needs work
+/ = discontinued/ditched
+
+[x] Grab Backpack 
+ +---[x] Forms URL for connecting to API
+ |    +---Resolves Username to 64-bit Steam ID
+ |
+ +---[x] Connects to API and grabs data
+ 
+[o]  Develop a Website Front End (possible django?)
+ +---[o] Create a inner-script HTTP server
+ +---[ ] Generate HTML or read HTML from a file for the website frontend
