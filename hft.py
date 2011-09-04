@@ -2,6 +2,7 @@ import csv
 import re
 import urllib2
 import json
+import string
 
 reader = csv.reader(open('Price Spreadsheet.csv', 'rU'))
 rows = [row for row in reader if row][3:-18]
@@ -74,12 +75,18 @@ items['SCOUT']["Fan O'War"] = items['SCOUT'].pop("Fan O' War")
 items['MEDIC']["Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"] = items['MEDIC'].pop("Syringe Gun")
 
 API_KEY = '7B63E4B36D9A471658A67BB460A8CDA3'
-ciferkey = '76561198015077540'
+ciferkey = raw_input('Login Name (NOT alias)/Steam ID : ')
 def get_items(key, userid):
-	url = ''.join([
-        'http://api.steampowered.com/IEconItems_440/GetPlayerItems/v0001/?key=',
-        key, '&format=json&SteamID=', userid
-	])
+	if isnumeric(ciferkey)==1:
+		url = ''.join([
+                'http://api.steampowered.com/IEconItems_440/GetPlayerItems/v0001/?key=',
+                key, '&format=json&SteamID=', userid
+                ])
+	else:
+		#FIX THIS
+
+
+
 	print url
 	return json.loads(urllib2.urlopen(url).read())
 
