@@ -76,17 +76,16 @@ items['MEDIC']["Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"] = items['MEDIC'].pop("S
 
 API_KEY = '7B63E4B36D9A471658A67BB460A8CDA3'
 ciferkey = raw_input('Login Name (NOT alias)/Steam ID : ')
+ciferkey = unicode(ciferkey)
+
+if ciferkey.isnumeric()==False:
+	xml = urllib2.urlopen("http://steamcommunity.com/id/"+ciferkey+"?xml=1").read()
+	ciferkey = re.search("<steamID64>(\d+)</steamID64>", xml).group(1)
+
 def get_items(key, userid):
-	if isnumeric(ciferkey)==1:
-		url = ''.join([
-                'http://api.steampowered.com/IEconItems_440/GetPlayerItems/v0001/?key=',
-                key, '&format=json&SteamID=', userid
-                ])
-	else:
-		#FIX THIS
-
-
-
+	url = ''.join([
+        'http://api.steampowered.com/IEconItems_440/GetPlayerItems/v0001/?key=',
+        key, '&format=json&SteamID=', userid])
 	print url
 	return json.loads(urllib2.urlopen(url).read())
 
