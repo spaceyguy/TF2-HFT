@@ -80,12 +80,10 @@ def get_items(key, userid):
         'http://api.steampowered.com/IEconItems_440/GetPlayerItems/v0001/?key=',
         key, '&format=json&SteamID=', userid
 	])
-	print url
 	return json.loads(urllib2.urlopen(url).read())
 
 def get_schema(key):
 	url = 'http://api.steampowered.com/IEconItems_440/GetSchema/v0001/?format=json&key=' + key
-	print url
 	return json.loads(urllib2.urlopen(url).read())
 	
 
@@ -117,3 +115,4 @@ def parse_backpack(result):
 result = get_items(API_KEY, ciferkey)
 schema = get_schema(API_KEY)
 parse_backpack(result)
+
