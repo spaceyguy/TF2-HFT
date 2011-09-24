@@ -87,11 +87,11 @@ def get_items(key, userid):
         'http://api.steampowered.com/IEconItems_440/GetPlayerItems/v0001/?key=',
         key, '&format=json&SteamID=', userid])
 	print url
->>>>>>> c695388f9dbe5caf45ef0c5f6da077eb7548e39c
 	return json.loads(urllib2.urlopen(url).read())
 
 def get_schema(key):
 	url = 'http://api.steampowered.com/IEconItems_440/GetSchema/v0001/?format=json&key=' + key
+	print url
 	return json.loads(urllib2.urlopen(url).read())
 	
 
