@@ -74,7 +74,7 @@ items['PYRO']['Upgradeable TF_WEAPON_FLAMETHROWER'] = items['PYRO'].pop('Flameth
 items['SCOUT']["Fan O'War"] = items['SCOUT'].pop("Fan O' War")
 items['MEDIC']["Upgradeable TF_WEAPON_SYRINGEGUN_MEDIC"] = items['MEDIC'].pop("Syringe Gun")
 
-API_KEY = '7B63E4B36D9A471658A67BB460A8CDA3'
+API_KEY = raw_input('Steam Api Key : ')
 ciferkey = raw_input('Login Name (NOT alias)/Steam ID : ')
 ciferkey = unicode(ciferkey)
 
